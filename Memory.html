@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Memory Card Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="Memory.css">
+</head>
+
+<body class="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-900 via-purple-900 to-red-900">
+    <div id="theme-screen" class="center-screen text-center">
+        <div class="bg-white/10 backdrop-blur-xl rounded-3xl p-10 shadow-2xl max-w-lg w-full">
+            <h1 class="text-5xl font-bold mb-4">🎲 Memory Game</h1>
+            <p class="text-lg mb-6 opacity-90">Choose a Theme</p>
+
+            <div class="theme-buttons flex flex-col gap-4">
+                <button class="btn-theme" onclick="startGame('animals')">🐶 Animals</button>
+                <button class="btn-theme" onclick="startGame('plants')">🌿 Plants</button>
+                <button class="btn-theme" onclick="startGame('emoji')">😀 Emoji Faces</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="game-ui" class="hidden w-full max-w-7xl mx-auto p-4">
+        <div class="bg-white/10 backdrop-blur-xl rounded-2xl shadow-xl p-4">
+            <div class="top-bar flex justify-between items-center mb-4">
+                <span id="timer" class="badge bg-danger fs-5">⏱️ 180</span>
+                <span id="score" class="badge bg-warning text-dark fs-5">⭐ Score: 0</span>
+            </div>
+            
+            <div id="countdown" class="countdown text-center"></div>
+
+            <div id="game-board" class="board"></div>
+        </div>
+    </div>
+
+    <div id="end-screen" class="center-screen hidden text-center">
+        <div class="bg-white/10 backdrop-blur-xl rounded-3xl p-10 shadow-2xl max-w-lg w-full">
+            <h2 class="text-4xl font-bold mb-4">Game Over</h2>
+            <p id="final-stats" class="mb-6 text-lg"></p>
+            <button class="btn btn-outline-light btn-lg rounded-pill" onclick="replayGame()">
+                🔄 Replay
+            </button>
+        </div>
+    </div>
+
+    <script src="Memory.js"></script>
+</body>
+</html>
